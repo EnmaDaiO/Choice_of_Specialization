@@ -7,3 +7,23 @@
 // ["hello", "2", "world",":-)"] -> ["2",":-)"]  \ В каждом элементе массива должно быть не более
 //  3 символов
 
+
+
+/// <summary>
+/// Метод создания массива строк, элементы которого задаются через консоль
+/// </summary>
+/// <param name="size"> параметр отвечающий за размер массива\выделение памяти для массива</param>
+/// <returns></returns>
+string[] CreatArray(int size) 
+{
+    string[] result = new string[size];
+    for (int i = 0; i < result.Length; i++)
+    {
+        System.Console.WriteLine($"Задайте {i+1}-ый элемент массива");
+        result[i] = Convert.ToString(Console.ReadLine());;
+    }
+    return result; 
+}
+
+string[] array = CreatArray(4);
+Console.WriteLine($"Массив массив из 8 строк: [{String.Join("; ", array)}]");
