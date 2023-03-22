@@ -25,5 +25,6 @@ string[] CreatArray(int size)
     return result; 
 }
 
-string[] array = CreatArray(4);
-Console.WriteLine($"Массив массив из 8 строк: [{String.Join("; ", array)}]");
+int size = Convert.ToInt32(Console.ReadLine());
+string[] array = CreatArray(size);
+Console.WriteLine($"Массив из {size} строк: [{String.Join("; ", array)}]");
