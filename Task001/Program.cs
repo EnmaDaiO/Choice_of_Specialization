@@ -25,6 +25,29 @@ string[] CreatArray(int size)
     return result; 
 }
 
+System.Console.WriteLine("Задайте размер массива: ");
 int size = Convert.ToInt32(Console.ReadLine());
 string[] array = CreatArray(size);
 Console.WriteLine($"Массив из {size} строк: [{String.Join("; ", array)}]");
+
+
+
+
+string[] FindWordCountLengthAndCreatArray(string[] array, int wordSize)
+{
+    string newArray = string.Empty;
+    for(int i = 0; i < array.Length; i++ )
+    {
+        if(array[i].Length<= wordSize)
+        {
+            newArray = newArray + array[i]+ ";";
+        }
+    }
+    newArray = newArray.Trim();
+    return newArray.Split(" ");
+}
+
+int wordSize = 3;
+string[] newArrayCountLengthWord = FindWordCountLengthAndCreatArray(array,wordSize);
+
+Console.WriteLine($"Массив из {size} строк: [{String.Join("; ", newArrayCountLengthWord)}]");
