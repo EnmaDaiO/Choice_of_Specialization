@@ -27,12 +27,20 @@ string[] CreatArray(int size)
 
 System.Console.WriteLine("Задайте размер массива: ");
 int size = Convert.ToInt32(Console.ReadLine());
+System.Console.WriteLine();
+
 string[] array = CreatArray(size);
-Console.WriteLine($"Массив из {size} строк: [{String.Join("; ", array)}]");
+Console.WriteLine($"Массив строк количество элементов в котором равно {size} : [{String.Join("; ", array)}]");
 
 
 
-
+/// <summary>
+/// Метод проверки и создания массива : проверяет размер каждого элемента выбранного массива на соответствие заданному ограничению 
+/// после чего выводит последовательность элементов прошедших проверку в виде нового массива.
+/// </summary>
+/// <param name="array"> массив элементы которого проверяются</param>
+/// <param name="wordSize">Размер элемента необходимый для прохождения проверки.</param>
+/// <returns></returns>
 string[] FindWordCountLengthAndCreatArray(string[] array, int wordSize)
 {
     string newArray = string.Empty;
@@ -42,12 +50,19 @@ string[] FindWordCountLengthAndCreatArray(string[] array, int wordSize)
         {
             newArray = newArray + array[i]+ ";";
         }
+        else
+        {
+            System.Console.WriteLine("В массиве нет элементов, размер которых меньше или равен 3");
+            break;
+        }
     }
     newArray = newArray.Trim();
     return newArray.Split(" ");
 }
+System.Console.WriteLine();
 
 int wordSize = 3;
 string[] newArrayCountLengthWord = FindWordCountLengthAndCreatArray(array,wordSize);
+System.Console.WriteLine();
 
-Console.WriteLine($"Массив из {size} строк: [{String.Join("; ", newArrayCountLengthWord)}]");
+Console.WriteLine($"Массив строк количество элементов в котором равно {newArrayCountLengthWord.Length}, c размером элементов не больше {wordSize}: [{String.Join("; ", newArrayCountLengthWord)}]");
